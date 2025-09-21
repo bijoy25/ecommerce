@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - BijoyShop</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+
+   <!-- Header -->
+  <header class="bg-blue-600 sticky top-0 z-50 shadow">
+    <div class="container mx-auto px-6 sm:px-32 flex justify-between items-center p-5">
+      <div class="text-white text-2xl font-bold"><a href="index.html">BijoyShop</a></div>
+      <nav class="hidden md:flex space-x-6 text-white">
+        <a href="index.html" class="hover:text-yellow-400">Home</a>
+        <a href="index.html#categories" class="hover:text-yellow-400">Categories</a>
+        <a href="index.html#products" class="hover:text-yellow-400">Products</a>
+        <a href="index.html#contact" class="hover:text-yellow-400">Contact</a>
+      </nav>
+      <!-- Mobile Hamburger -->
+      <div class="md:hidden flex items-center space-x-4">
+        <button id="menu-btn" class="text-white focus:outline-none">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-blue-700 text-white">
+      <ul class="flex flex-col p-4 space-y-3">
+        <li><a href="index.html" class="hover:text-yellow-400">Home</a></li>
+        <li><a href="category.html" class="hover:text-yellow-400">Categories</a></li>
+        <li><a href="index.html#products" class="hover:text-yellow-400">Products</a></li>
+        <li><a href="index.html#contact" class="hover:text-yellow-400">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
+
+  <!-- Checkout Section -->
+  <section class="py-20">
+    <div class="container mx-auto px-6 sm:px-32">
+      <h1 class="text-4xl font-bold mb-10 text-center">Checkout</h1>
+      <div class="grid md:grid-cols-2 gap-12">
+
+        <!-- Billing Details Form -->
+        <div class="bg-gray-50 p-8 rounded-lg shadow">
+          <h2 class="text-2xl font-semibold mb-6">Billing Details</h2>
+          <form class="flex flex-col gap-4">
+            <input type="text" placeholder="Full Name" class="p-3 border border-gray-300 rounded" required>
+            <input type="email" placeholder="Email Address" class="p-3 border border-gray-300 rounded" required>
+            <input type="text" placeholder="Phone Number" class="p-3 border border-gray-300 rounded" required>
+            <input type="text" placeholder="Address" class="p-3 border border-gray-300 rounded" required>
+            <input type="text" placeholder="City" class="p-3 border border-gray-300 rounded" required>
+            <input type="text" placeholder="Postal Code" class="p-3 border border-gray-300 rounded" required>
+          </form>
+        </div>
+
+        <!-- Order Summary -->
+        <div class="bg-gray-50 p-8 rounded-lg shadow">
+          <h2 class="text-2xl font-semibold mb-6">Order Summary</h2>
+          <div class="flex flex-col gap-4 mb-6">
+            <div class="flex justify-between items-center border-b pb-2">
+              <p>Smartphone X</p>
+              <p>$499.99</p>
+            </div>
+            <div class="flex justify-between items-center border-b pb-2">
+              <p>Laptop Pro</p>
+              <p>$899.99</p>
+            </div>
+            <div class="flex justify-between items-center border-b pb-2 font-semibold">
+              <p>Total</p>
+              <p>$1,399.98</p>
+            </div>
+          </div>
+
+          <!-- Payment Method -->
+          <h3 class="text-xl font-semibold mb-4">Payment Method</h3>
+          <div class="flex flex-col gap-3 mb-6">
+            <label class="flex items-center gap-2">
+              <input type="radio" name="payment" class="form-radio" checked>
+              Credit/Debit Card
+            </label>
+            <label class="flex items-center gap-2">
+              <input type="radio" name="payment" class="form-radio">
+              PayPal
+            </label>
+            <label class="flex items-center gap-2">
+              <input type="radio" name="payment" class="form-radio">
+              Cash on Delivery
+            </label>
+          </div>
+
+          <button class="w-full bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-800 transition">Place Order</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center py-6">
+    <p>&copy; 2025 BijoyShop. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
